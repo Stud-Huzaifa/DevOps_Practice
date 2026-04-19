@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nami - One Piece Character</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .character-hero {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .character-name {
+            font-family: 'Cinzel', serif;
+            font-size: 3em;
+            font-weight: 900;
+            color: #FFD944;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .character-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2em;
+            color: #FFE37A;
+            margin: 0 0 20px 0;
+        }
+
+        .character-image-large {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #FFD700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            margin: 0 auto 30px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .character-image-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .character-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .character-section {
+            background: rgba(15, 15, 15, 0.8);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8em;
+            color: #FFD944;
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .character-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9em;
+            color: #FFE37A;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            color: #FFD944;
+            font-weight: 700;
+        }
+
+        .bounty-display {
+            background: linear-gradient(45deg, #FFD700, #FFE37A);
+            color: #000;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 1.6em;
+            font-weight: 800;
+        }
+
+        .abilities-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ability-item {
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 4px solid #FFD700;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .ability-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            color: #FFE37A;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .ability-description {
+            font-family: 'Inter', sans-serif;
+            color: #E0E0E0;
+            line-height: 1.6;
+        }
+
+        .arc-info {
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .arc-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            color: #4ECDC4;
+            margin-bottom: 10px;
+        }
+
+        .arc-description {
+            font-family: 'Inter', sans-serif;
+            color: #E0E0E0;
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #FFD700;
+            color: #FFD944;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="background-overlay"></div>
+    <div class="background-image" style="background-image: url('26035.jpg');"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="sidebar-logo">ONE PIECE</h1>
+            <p class="sidebar-subtitle">The Grand Adventure</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <!-- Story Arcs Section -->
+            <div class="nav-section">
+                <a href="index.html" class="nav-section-title">Story Arcs</a>
+                <a href="index.html#east-blue" class="nav-item">East Blue Saga</a>
+                <a href="index.html#romance-dawn" class="nav-subitem">Romance Dawn</a>
+                <a href="index.html#orange-town" class="nav-subitem">Orange Town</a>
+                <a href="index.html#syrup-village" class="nav-subitem">Syrup Village</a>
+                <a href="index.html#baratie" class="nav-subitem">Baratie</a>
+                <a href="index.html#arlong-park" class="nav-subitem">Arlong Park</a>
+                <a href="index.html#loguetown" class="nav-subitem">Loguetown</a>
+            </div>
+
+            <!-- Characters Section -->
+            <div class="nav-section">
+                <a href="characters.html" class="nav-section-title">Crew Members</a>
+                <a href="luffy.html" class="nav-item">Monkey D. Luffy</a>
+                <a href="zoro.html" class="nav-item">Roronoa Zoro</a>
+                <a href="nami.html" class="nav-item active">Nami</a>
+                <a href="usopp.html" class="nav-item">Usopp</a>
+                <a href="sanji.html" class="nav-item">Sanji</a>
+                <a href="chopper.html" class="nav-item">Tony Tony Chopper</a>
+                <a href="robin.html" class="nav-item">Nico Robin</a>
+                <a href="franky.html" class="nav-item">Franky</a>
+                <a href="brook.html" class="nav-item">Brook</a>
+            </div>
+
+            <!-- Devil Fruits Section -->
+            <div class="nav-section">
+                <a href="devil-fruits.html" class="nav-section-title">Devil Fruits</a>
+                <a href="devil-fruits.html#paramecia" class="nav-item">Paramecia Type</a>
+                <a href="devil-fruits.html#logia" class="nav-item">Logia Type</a>
+                <a href="devil-fruits.html#zoan" class="nav-item">Zoan Type</a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Character Hero Section -->
+        <section class="character-hero">
+            <div class="character-image-large">
+                <img src="placeholder-nami.jpg" alt="Nami">
+            </div>
+            <h1 class="character-name">Nami</h1>
+            <p class="character-title">Navigator • Thief • Weather Specialist</p>
+            <div class="bounty-display">366,000,000 Berries</div>
+        </section>
+
+        <!-- Character Details -->
+        <div class="character-content">
+            <!-- Basic Information -->
+            <section class="character-section">
+                <h2 class="section-title">Basic Information</h2>
+                <div class="character-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Age</div>
+                        <div class="stat-value">20</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Height</div>
+                        <div class="stat-value">170 cm</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Birthday</div>
+                        <div class="stat-value">July 2nd</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Blood Type</div>
+                        <div class="stat-value">X</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Devil Fruit</div>
+                        <div class="stat-value">None</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Special Attribute</div>
+                        <div class="stat-value">Navigation</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="character-section">
+                <h2 class="section-title">About</h2>
+                <p>Nami is the navigator of the Straw Hat Pirates and one of the smartest members of the crew. Originally a thief who joined the crew to steal their ship, she eventually became a loyal member and close friend to Luffy. Her dream is to draw a complete map of the world.</p>
+                <p>As a skilled navigator and cartographer, Nami uses her exceptional intelligence and weather knowledge to guide the crew safely through dangerous waters. She's also known for her love of money and her tendency to overcharge people for her services.</p>
+            </section>
+
+            <!-- Abilities Section -->
+            <section class="character-section">
+                <h2 class="section-title">Abilities & Techniques</h2>
+                <ul class="abilities-list">
+                    <li class="ability-item">
+                        <div class="ability-name">Clima-Tact</div>
+                        <div class="ability-description">A special staff that can manipulate weather and create various weather phenomena for combat and navigation.</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-name">Perfect Clima-Tact</div>
+                        <div class="ability-description">An upgraded version of the Clima-Tact with enhanced weather manipulation capabilities.</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-name">Thunderbolt Tempo</div>
+                        <div class="ability-description">A technique that creates powerful lightning strikes to attack enemies.</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-name">Mirage Tempo</div>
+                        <div class="ability-description">Creates illusions using mist to confuse and disorient opponents.</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-name">Cartography Expertise</div>
+                        <div class="ability-description">Exceptional skill in creating detailed maps and navigating through treacherous waters.</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-name">Weather Prediction</div>
+                        <div class="ability-description">Advanced knowledge of weather patterns and ability to predict storms and climate changes.</div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Arc Information -->
+            <section class="character-section">
+                <h2 class="section-title">Story Arcs</h2>
+                <div class="arc-info">
+                    <div class="arc-title">Orange Town Arc</div>
+                    <div class="arc-description">Nami joins the Straw Hats after they defeat Buggy and help her steal the Going Merry.</div>
+                </div>
+                <div class="arc-info">
+                    <div class="arc-title">Arlong Park Arc</div>
+                    <div class="arc-description">Nami's past is revealed as the crew fights to free her village from Arlong's tyranny.</div>
+                </div>
+                <div class="arc-info">
+                    <div class="arc-title">Skypiea Arc</div>
+                    <div class="arc-description">Nami navigates the crew through the dangerous sky islands and helps defeat Eneru.</div>
+                </div>
+                <div class="arc-info">
+                    <div class="arc-title">Water 7 Arc</div>
+                    <div class="arc-description">Nami takes on a leadership role and helps resolve the conflict between the crew members.</div>
+                </div>
+                <div class="arc-info">
+                    <div class="arc-title">Enies Lobby Arc</div>
+                    <div class="arc-description">Nami fights alongside her crew to rescue Robin from the World Government.</div>
+                </div>
+                <div class="arc-info">
+                    <div class="arc-title">Whole Cake Island Arc</div>
+                    <div class="arc-description">Nami's navigation skills are crucial in helping the crew escape from Big Mom's territory.</div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div style="text-align: center;">
+                <a href="zoro.html" class="back-button">← Previous: Roronoa Zoro</a>
+                <a href="characters.html" class="back-button" style="margin: 0 20px;">Back to Crew Members</a>
+                <a href="usopp.html" class="back-button">Next: Usopp →</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
