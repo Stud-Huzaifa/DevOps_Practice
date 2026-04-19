@@ -727,7 +727,7 @@ footer a:hover {
 
 .sidebar-logo {
     font-family: 'Cinzel', serif;
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: 900;
     color: #FFD944;
     margin: 0;
@@ -737,7 +737,7 @@ footer a:hover {
 
 .sidebar-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.9em;
+    font-size: 0.7em;
     color: #FFE37A;
     margin: 8px 0 0 0;
     opacity: 0.8;
@@ -748,36 +748,63 @@ footer a:hover {
 }
 
 .nav-section {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .nav-section-title {
     font-family: 'Cinzel', serif;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 700;
     color: #FFD944;
-    padding: 0 20px;
-    margin-bottom: 15px;
+    padding: 8px 15px;
+    margin-bottom: 0;
     border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-    padding-bottom: 8px;
+    padding-bottom: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-section-title:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: #FFE37A;
+}
+
+.nav-section-title::after {
+    content: "▶";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: #FFD944;
+    transition: transform 0.3s ease;
+}
+
+.nav-section:hover .nav-section-title::after {
+    transform: translateY(-50%) rotate(90deg);
 }
 
 .nav-item {
-    display: block;
-    padding: 12px 20px;
+    display: none;
+    padding: 6px 15px 6px 30px;
     color: #E0E0E0;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
-    font-size: 0.95em;
+    font-size: 0.85em;
     transition: all 0.3s ease;
-    border-left: 3px solid transparent;
+    border-left: 2px solid transparent;
+}
+
+.nav-section:hover .nav-item {
+    display: block;
 }
 
 .nav-item:hover {
-    background: rgba(255, 215, 0, 0.1);
-    color: #FFD944;
-    border-left-color: #FFD700;
-    padding-left: 25px;
+    background: rgba(255, 215, 0, 0.08);
+    color: #FFE37A;
+    border-left-color: rgba(255, 215, 0, 0.5);
+    padding-left: 35px;
 }
 
 .nav-item.active {
@@ -787,21 +814,25 @@ footer a:hover {
 }
 
 .nav-subitem {
-    display: block;
-    padding: 8px 20px 8px 40px;
+    display: none;
+    padding: 4px 15px 4px 45px;
     color: #B8B8B8;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
-    font-size: 0.9em;
+    font-size: 0.8em;
     transition: all 0.3s ease;
-    border-left: 2px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+.nav-section:hover .nav-subitem {
+    display: block;
 }
 
 .nav-subitem:hover {
-    background: rgba(255, 215, 0, 0.08);
+    background: rgba(255, 215, 0, 0.06);
     color: #FFE37A;
-    border-left-color: rgba(255, 215, 0, 0.5);
-    padding-left: 45px;
+    border-left-color: rgba(255, 215, 0, 0.3);
+    padding-left: 50px;
 }
 
 /* Main Content Adjustment */
