@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devil Fruits Encyclopedia - One Piece</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Devil Fruits specific styles */
+        .devil-fruit-card {
+            background: linear-gradient(180deg, rgba(15, 15, 15, 0.9), rgba(8, 8, 8, 0.85));
+            border-radius: 18px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.04);
+            margin-bottom: 20px;
+        }
+
+        .devil-fruit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 45px rgba(255, 215, 0, 0.35), inset 0 0 20px rgba(255, 215, 0, 0.08);
+            border-color: #FFD700;
+        }
+
+        .devil-fruit-header {
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .devil-fruit-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #FFD944;
+            margin: 0 0 8px 0;
+            letter-spacing: 1px;
+        }
+
+        .devil-fruit-type {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .type-paramecia {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+            color: white;
+        }
+
+        .type-logia {
+            background: linear-gradient(45deg, #4ECDC4, #7ED6D3);
+            color: white;
+        }
+
+        .type-zoan {
+            background: linear-gradient(45deg, #45B7D1, #6BC7E0);
+            color: white;
+        }
+
+        .devil-fruit-user {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            color: #FFE37A;
+            margin: 8px 0;
+        }
+
+        .devil-fruit-content {
+            padding: 24px;
+        }
+
+        .devil-fruit-description {
+            font-family: 'Inter', sans-serif;
+            color: #E0E0E0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .devil-fruit-abilities {
+            margin-top: 20px;
+        }
+
+        .abilities-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            color: #FFD944;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .ability-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ability-item {
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 3px solid #FFD700;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .ability-item strong {
+            color: #FFE37A;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background: rgba(15, 15, 15, 0.8);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            color: #FFE37A;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+            border-color: #FFD700;
+            color: #FFD944;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .type-section {
+            margin-bottom: 50px;
+        }
+
+        .type-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            color: #FFD944;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .type-description {
+            font-family: 'Inter', sans-serif;
+            color: #E0E0E0;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        .devil-fruits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .devil-fruits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .type-title {
+                font-size: 2em;
+            }
+
+            .devil-fruit-name {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="background-overlay"></div>
+    <div class="background-image" style="background-image: url('26035.jpg');"></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>ONE PIECE</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Story Arcs</a></li>
+                <li><a href="characters.html">Crew Members</a></li>
+                <li><a href="devil-fruits.html" class="active">Devil Fruits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">Devil Fruits Encyclopedia</h1>
+            <p class="hero-subtitle">Explore the mysterious powers that shape the world of One Piece</p>
+        </section>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Fruits</button>
+            <button class="filter-btn" data-filter="paramecia">Paramecia</button>
+            <button class="filter-btn" data-filter="logia">Logia</button>
+            <button class="filter-btn" data-filter="zoan">Zoan</button>
+        </div>
+
+        <!-- Paramecia Type Section -->
+        <section class="type-section" data-type="paramecia">
+            <h2 class="type-title">Paramecia Type</h2>
+            <p class="type-description">Paramecia Devil Fruits grant their users superhuman abilities that don't fall into the elemental or animal transformation categories. These fruits provide a wide variety of powers, from body manipulation to creating substances.</p>
+
+            <div class="devil-fruits-grid">
+                <!-- Gomu Gomu no Mi -->
+                <div class="devil-fruit-card" data-type="paramecia">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Gomu Gomu no Mi</h3>
+                        <span class="devil-fruit-type type-paramecia">Paramecia</span>
+                        <p class="devil-fruit-user">User: Monkey D. Luffy</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Rubber-Rubber Fruit grants the user the properties of rubber, allowing them to stretch, bounce, and manipulate their body in extraordinary ways. This fruit turned Luffy into the rubber man capable of incredible feats.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Gomu Gomu no Pistol:</strong> Basic stretching punch attack</li>
+                                <li class="ability-item"><strong>Gomu Gomu no Bazooka:</strong> Double-handed stretching punch</li>
+                                <li class="ability-item"><strong>Gomu Gomu no Gatling:</strong> Rapid-fire punch barrage</li>
+                                <li class="ability-item"><strong>Gomu Gomu no Rocket:</strong> Full-body stretching propulsion</li>
+                                <li class="ability-item"><strong>Gear Techniques:</strong> Advanced power-ups (Second, Third, Fourth, Fifth Gear)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hana Hana no Mi -->
+                <div class="devil-fruit-card" data-type="paramecia">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Hana Hana no Mi</h3>
+                        <span class="devil-fruit-type type-paramecia">Paramecia</span>
+                        <p class="devil-fruit-user">User: Nico Robin</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Flower-Flower Fruit allows the user to sprout multiple body parts (limbs, eyes, mouths) from any surface. This ability gives Robin unparalleled versatility in combat and information gathering.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Fleur:</strong> Sprout multiple limbs for attacks</li>
+                                <li class="ability-item"><strong>Clutch:</strong> Grab and restrain opponents</li>
+                                <li class="ability-item"><strong>Mil Fleur:</strong> Thousand Flower attack</li>
+                                <li class="ability-item"><strong>Cien Fleur:</strong> Hundred Flower defense</li>
+                                <li class="ability-item"><strong>Espionage Capabilities:</strong> Gather intelligence from multiple locations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yami Yami no Mi -->
+                <div class="devil-fruit-card" data-type="paramecia">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Yami Yami no Mi</h3>
+                        <span class="devil-fruit-type type-paramecia">Paramecia</span>
+                        <p class="devil-fruit-user">User: Marshall D. Teach (Blackbeard)</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Darkness-Darkness Fruit allows the user to create and control darkness. This fruit gives Blackbeard the ability to nullify other Devil Fruit powers and manipulate gravitational forces.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Devil Fruit Nullification:</strong> Cancel other Devil Fruit abilities</li>
+                                <li class="ability-item"><strong>Black Hole:</strong> Create crushing gravitational fields</li>
+                                <li class="ability-item"><strong>Darkness Manipulation:</strong> Control and shape darkness</li>
+                                <li class="ability-item"><strong>Quake Integration:</strong> Combine with Gura Gura no Mi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suke Suke no Mi -->
+                <div class="devil-fruit-card" data-type="paramecia">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Suke Suke no Mi</h3>
+                        <span class="devil-fruit-type type-paramecia">Paramecia</span>
+                        <p class="devil-fruit-user">User: Absalom</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Clear-Clear Fruit grants the ability to become invisible and make objects invisible by touch. This fruit provides perfect stealth capabilities.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Invisibility:</strong> Become completely invisible</li>
+                                <li class="ability-item"><strong>Object Invisibility:</strong> Make touched objects invisible</li>
+                                <li class="ability-item"><strong>Stealth Operations:</strong> Perfect for ambushes and espionage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logia Type Section -->
+        <section class="type-section" data-type="logia">
+            <h2 class="type-title">Logia Type</h2>
+            <p class="type-description">Logia Devil Fruits grant their users the ability to create, control, and transform their body into natural elements. These are considered the most powerful type of Devil Fruit, giving users elemental control and intangibility.</p>
+
+            <div class="devil-fruits-grid">
+                <!-- Mera Mera no Mi -->
+                <div class="devil-fruit-card" data-type="logia">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Mera Mera no Mi</h3>
+                        <span class="devil-fruit-type type-logia">Logia</span>
+                        <p class="devil-fruit-user">User: Portgas D. Ace (Former), Sabo</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Flame-Flame Fruit allows the user to create, control, and transform into fire. This Logia fruit gives the user complete mastery over flames and immunity to most fire-based attacks.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Fire Manipulation:</strong> Create and control flames</li>
+                                <li class="ability-item"><strong>Fire Transformation:</strong> Become living fire</li>
+                                <li class="ability-item"><strong>Fire Immunity:</strong> Immune to fire attacks</li>
+                                <li class="ability-item"><strong>Hiken:</strong> Fire Fist technique</li>
+                                <li class="ability-item"><strong>Entei:</strong> Fire Cloud technique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suna Suna no Mi -->
+                <div class="devil-fruit-card" data-type="logia">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Suna Suna no Mi</h3>
+                        <span class="devil-fruit-type type-logia">Logia</span>
+                        <p class="devil-fruit-user">User: Crocodile</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Sand-Sand Fruit allows the user to create, control, and transform into sand. This fruit gives Crocodile desert-manipulating powers and the ability to dehydrate opponents.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Sand Manipulation:</strong> Control sand and create sandstorms</li>
+                                <li class="ability-item"><strong>Desert Spada:</strong> Sand blade attacks</li>
+                                <li class="ability-item"><strong>Dehydration:</strong> Absorb moisture from targets</li>
+                                <li class="ability-item"><strong>Sables:</strong> Sand shield defense</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pika Pika no Mi -->
+                <div class="devil-fruit-card" data-type="logia">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Pika Pika no Mi</h3>
+                        <span class="devil-fruit-type type-logia">Logia</span>
+                        <p class="devil-fruit-user">User: Borsalino (Kizaru)</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Glint-Glint Fruit allows the user to create, control, and transform into light. This fruit gives Admiral Kizaru incredible speed and light-based attacks.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Light Speed:</strong> Move at the speed of light</li>
+                                <li class="ability-item"><strong>Laser Attacks:</strong> Yasakani no Magatama</li>
+                                <li class="ability-item"><strong>Light Manipulation:</strong> Create light constructs</li>
+                                <li class="ability-item"><strong>Intangibility:</strong> Become light to avoid attacks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zoan Type Section -->
+        <section class="type-section" data-type="zoan">
+            <h2 class="type-title">Zoan Type</h2>
+            <p class="type-description">Zoan Devil Fruits allow users to transform into animals and hybrid forms between human and animal. These fruits are divided into Normal, Ancient, and Mythical Zoan types, with Mythical being the rarest and most powerful.</p>
+
+            <div class="devil-fruits-grid">
+                <!-- Hito Hito no Mi -->
+                <div class="devil-fruit-card" data-type="zoan">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Hito Hito no Mi</h3>
+                        <span class="devil-fruit-type type-zoan">Zoan</span>
+                        <p class="devil-fruit-user">User: Tony Tony Chopper</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Human-Human Fruit allows the user to transform into a human and hybrid forms. This fruit gave Chopper human intelligence and the ability to transform into various forms for different situations.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Human Transformation:</strong> Become fully human</li>
+                                <li class="ability-item"><strong>Hybrid Forms:</strong> Various human-reindeer hybrids</li>
+                                <li class="ability-item"><strong>Rumble Ball Enhancement:</strong> Temporary power boosts</li>
+                                <li class="ability-item"><strong>Monster Point:</strong> Ultimate transformation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ushi Ushi no Mi, Model: Giraffe -->
+                <div class="devil-fruit-card" data-type="zoan">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Ushi Ushi no Mi, Model: Giraffe</h3>
+                        <span class="devil-fruit-type type-zoan">Zoan</span>
+                        <p class="devil-fruit-user">User: Dalton</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Cow-Cow Fruit, Model: Giraffe allows the user to transform into a giraffe and hybrid forms. This fruit gives Dalton giraffe-like abilities including long neck attacks.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Giraffe Transformation:</strong> Become a giraffe</li>
+                                <li class="ability-item"><strong>Elongated Neck:</strong> Extend neck for attacks</li>
+                                <li class="ability-item"><strong>Hybrid Strength:</strong> Enhanced physical power</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tori Tori no Mi, Model: Phoenix -->
+                <div class="devil-fruit-card" data-type="zoan">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Tori Tori no Mi, Model: Phoenix</h3>
+                        <span class="devil-fruit-type type-zoan">Zoan (Mythical)</span>
+                        <p class="devil-fruit-user">User: Marco</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Bird-Bird Fruit, Model: Phoenix is a Mythical Zoan that allows the user to transform into a phoenix and hybrid forms. This legendary fruit grants Marco regenerative abilities and fire manipulation.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Phoenix Transformation:</strong> Become a mythical phoenix</li>
+                                <li class="ability-item"><strong>Regeneration:</strong> Heal from severe injuries</li>
+                                <li class="ability-item"><strong>Blue Flames:</strong> Phoenix fire manipulation</li>
+                                <li class="ability-item"><strong>Immortality:</strong> Cannot die from normal means</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inu Inu no Mi, Model: Wolf -->
+                <div class="devil-fruit-card" data-type="zoan">
+                    <div class="devil-fruit-header">
+                        <h3 class="devil-fruit-name">Inu Inu no Mi, Model: Wolf</h3>
+                        <span class="devil-fruit-type type-zoan">Zoan</span>
+                        <p class="devil-fruit-user">User: Jabra</p>
+                    </div>
+                    <div class="devil-fruit-content">
+                        <p class="devil-fruit-description">The Dog-Dog Fruit, Model: Wolf allows the user to transform into a wolf and hybrid forms. This fruit enhances Jabra's physical abilities and gives him wolf-like senses.</p>
+                        <div class="devil-fruit-abilities">
+                            <h4 class="abilities-title">Notable Abilities</h4>
+                            <ul class="ability-list">
+                                <li class="ability-item"><strong>Wolf Transformation:</strong> Become a wolf</li>
+                                <li class="ability-item"><strong>Enhanced Senses:</strong> Superior smell and hearing</li>
+                                <li class="ability-item"><strong>Hybrid Strength:</strong> Increased physical power</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 One Piece Fan Site. Created with passion for the series.</p>
+            <div class="footer-links">
+                <a href="index.html">Story Arcs</a>
+                <a href="characters.html">Characters</a>
+                <a href="devil-fruits.html">Devil Fruits</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const typeSections = document.querySelectorAll('.type-section');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Show/hide sections
+                    if (filter === 'all') {
+                        typeSections.forEach(section => {
+                            section.style.display = 'block';
+                        });
+                    } else {
+                        typeSections.forEach(section => {
+                            if (section.getAttribute('data-type') === filter) {
+                                section.style.display = 'block';
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
