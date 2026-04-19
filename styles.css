@@ -763,6 +763,8 @@ footer a:hover {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    text-decoration: none;
+    display: block;
 }
 
 .nav-section-title:hover {
@@ -775,7 +777,7 @@ footer a:hover {
     position: absolute;
     right: 15px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(0deg);
     font-size: 0.8em;
     color: #FFD944;
     transition: transform 0.3s ease;
@@ -783,6 +785,46 @@ footer a:hover {
 
 .nav-section:hover .nav-section-title::after {
     transform: translateY(-50%) rotate(90deg);
+}
+
+/* Different colors for each section */
+.nav-section:nth-child(1) .nav-section-title {
+    border-left: 4px solid #FFD700;
+}
+
+.nav-section:nth-child(1) .nav-section-title::after {
+    color: #FFD700;
+}
+
+.nav-section:nth-child(1):hover .nav-section-title {
+    background: rgba(255, 215, 0, 0.15);
+    border-left-color: #FFE37A;
+}
+
+.nav-section:nth-child(2) .nav-section-title {
+    border-left: 4px solid #FF6B6B;
+}
+
+.nav-section:nth-child(2) .nav-section-title::after {
+    color: #FF6B6B;
+}
+
+.nav-section:nth-child(2):hover .nav-section-title {
+    background: rgba(255, 107, 107, 0.15);
+    border-left-color: #FF8E8E;
+}
+
+.nav-section:nth-child(3) .nav-section-title {
+    border-left: 4px solid #4ECDC4;
+}
+
+.nav-section:nth-child(3) .nav-section-title::after {
+    color: #4ECDC4;
+}
+
+.nav-section:nth-child(3):hover .nav-section-title {
+    background: rgba(78, 205, 196, 0.15);
+    border-left-color: #7ED6D3;
 }
 
 .nav-item {
