@@ -704,3 +704,124 @@ footer a:hover {
         font-size: 1.5em;
     }
 }
+
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.95), rgba(5, 5, 5, 0.95));
+    border-right: 2px solid rgba(255, 215, 0, 0.3);
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-header {
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    text-align: center;
+}
+
+.sidebar-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8em;
+    font-weight: 900;
+    color: #FFD944;
+    margin: 0;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+.sidebar-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    color: #FFE37A;
+    margin: 8px 0 0 0;
+    opacity: 0.8;
+}
+
+.sidebar-nav {
+    padding: 20px 0;
+}
+
+.nav-section {
+    margin-bottom: 30px;
+}
+
+.nav-section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #FFD944;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    padding-bottom: 8px;
+}
+
+.nav-item {
+    display: block;
+    padding: 12px 20px;
+    color: #E0E0E0;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: #FFD944;
+    border-left-color: #FFD700;
+    padding-left: 25px;
+}
+
+.nav-item.active {
+    background: rgba(255, 215, 0, 0.15);
+    color: #FFD944;
+    border-left-color: #FFD700;
+}
+
+.nav-subitem {
+    display: block;
+    padding: 8px 20px 8px 40px;
+    color: #B8B8B8;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+.nav-subitem:hover {
+    background: rgba(255, 215, 0, 0.08);
+    color: #FFE37A;
+    border-left-color: rgba(255, 215, 0, 0.5);
+    padding-left: 45px;
+}
+
+/* Main Content Adjustment */
+.main-content {
+    margin-left: 280px;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
