@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Piece Arcs Explorer</title>
+    <meta name="description" content="Explore One Piece sagas, crew members, and Devil Fruits with a polished interactive site for fans of the Grand Line.">
+    <meta name="keywords" content="One Piece, Straw Hat, anime fan site, arcs, characters, Devil Fruits, manga, pirate adventure">
+    <meta property="og:title" content="One Piece Arcs Explorer">
+    <meta property="og:description" content="Dive into the world of One Piece with story arc posters, crew profiles, and Devil Fruit secrets.">
+    <meta property="og:image" content="../images/26035.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-github-pages-url/">
+    <link rel="icon" href="../images/26035.jpg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body id="top">
     <!-- Background -->
     <div class="background-overlay"></div>
     <div class="background-image" style="background-image: url('../images/26035.jpg');"></div>
@@ -17,12 +25,31 @@
     <header>
         <h1>ONE PIECE</h1>
         <p>The greatest pirate adventure on the Grand Line — discover sagas, crew legends, and the secrets behind every Devil Fruit.</p>
+        <div class="hero-actions">
+            <a href="#east-blue" class="primary-cta">Explore East Blue</a>
+            <a href="characters.html" class="secondary-cta">Meet the Crew</a>
+        </div>
+        <div class="hero-meta">
+            <span class="hero-badge">Map of Legends</span>
+            <p class="hero-subtext">Set sail through the Grand Line with spotlight arcs, crew highlights, and Devil Fruit lore built for fans and explorers.</p>
+        </div>
+        <div class="hero-timeline">
+            <span>East Blue</span>
+            <span>Arabasta</span>
+            <span>Skypiea</span>
+            <span>Water 7</span>
+            <span>Thriller Bark</span>
+        </div>
     </header>
 
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="index.html" class="sidebar-logo">ONE PIECE</a>
+            <div class="sidebar-actions">
+                <button class="theme-switcher" aria-label="Toggle theme">🌙</button>
+                <button class="sidebar-toggle" aria-expanded="true" aria-label="Toggle navigation">☰</button>
+            </div>
             <p class="sidebar-subtitle">The Grand Adventure</p>
         </div>
 
@@ -116,36 +143,57 @@
     </aside>
 
     <main class="main-content">
+        <section class="feature-panel">
+            <div class="feature-info">
+                <span class="feature-label">Captain's Log</span>
+                <h2>Spotlight Arc: Arabasta Drama</h2>
+                <p>Follow the Straw Hats as they race across the desert, face Crocodile, and stand for a kingdom in turmoil. This featured saga highlights the rise of their legend.</p>
+                <a href="#arabasta" class="secondary-cta">Explore Arabasta</a>
+            </div>
+            <div class="feature-visual">
+                <img src="../images/alabasta arc.jfif" alt="Arabasta Arc Spotlight" loading="lazy">
+            </div>
+        </section>
+        <section class="search-panel">
+            <div class="search-content">
+                <h2>Search the Grand Line</h2>
+                <p>Type a saga, character, or Devil Fruit name to instantly filter the story arc cards.</p>
+                <div class="search-input-wrapper">
+                    <input id="arc-search" type="search" placeholder="Search arcs, heroes, or Devil Fruits..." aria-label="Search arcs and characters">
+                    <span class="search-hint">Example: Luffy, Arlong Park, Gomu Gomu</span>
+                </div>
+            </div>
+        </section>
         <section id="east-blue" class="saga">
             <h2>East Blue Saga</h2>
             <div class="arcs">
                 <div id="romance-dawn" class="arc" data-arc="romance-dawn">
-                    <div class="arc-image"><img src="../images/romance-dawn.jfif" alt="Romance Dawn"></div>
+                    <div class="arc-image"><img src="../images/romance-dawn.jfif" alt="Romance Dawn" loading="lazy"></div>
                     <h3>Romance Dawn Arc</h3>
                     <p>Luffy leaves Foosha Village with his straw hat and the dream of becoming Pirate King. He rescues Zoro and begins gathering the first members of the Straw Hat crew.</p>
                 </div>
                 <div id="orange-town" class="arc" data-arc="orange-town">
-                    <div class="arc-image"><img src="../images/orange-town.jfif" alt="Orange Town"></div>
+                    <div class="arc-image"><img src="../images/orange-town.jfif" alt="Orange Town" loading="lazy"></div>
                     <h3>Orange Town Arc</h3>
                     <p>The Straw Hats clash with the explosive pirate Buggy the Clown. Luffy learns to trust his crew as they save the town from chaos and pirate tyranny.</p>
                 </div>
                 <div id="syrup-village" class="arc" data-arc="syrup-village">
-                    <div class="arc-image"><img src="../images/syrup arc.jfif" alt="Syrup Village"></div>
+                    <div class="arc-image"><img src="../images/syrup arc.jfif" alt="Syrup Village" loading="lazy"></div>
                     <h3>Syrup Village Arc</h3>
                     <p>Usopp joins after the crew foils Captain Kuro’s plot to steal Kaya’s fortune. This arc builds loyalty and introduces the power of clever tactics.</p>
                 </div>
                 <div id="baratie" class="arc" data-arc="baratie">
-                    <div class="arc-image"><img src="../images/baratie arc.jfif" alt="Baratie"></div>
+                    <div class="arc-image"><img src="../images/baratie arc.jfif" alt="Baratie" loading="lazy"></div>
                     <h3>Baratie Arc</h3>
                     <p>Luffy battles the pirate admiral Don Krieg while the crew visits the floating restaurant Baratie. Sanji chooses adventure over duty and becomes the Straw Hat cook.</p>
                 </div>
                 <div id="arlong-park" class="arc" data-arc="arlong-park">
-                    <div class="arc-image"><img src="../images/arlong arc.jfif" alt="Arlong Park"></div>
+                    <div class="arc-image"><img src="../images/arlong arc.jfif" alt="Arlong Park" loading="lazy"></div>
                     <h3>Arlong Park Arc</h3>
                     <p>Nami’s tragic past is revealed as the crew frees Cocoyashi Village from Arlong’s oppression. The arc highlights friendship, justice, and the strength of Luffy’s resolve.</p>
                 </div>
                 <div id="loguetown" class="arc" data-arc="loguetown">
-                    <div class="arc-image"><img src="../images/logue town arc.jfif" alt="Loguetown"></div>
+                    <div class="arc-image"><img src="../images/logue town arc.jfif" alt="Loguetown" loading="lazy"></div>
                     <h3>Loguetown Arc</h3>
                     <p>The crew visits the City of Beginnings where Gol D. Roger was executed. Luffy faces Smoker and the winds of fate push him into the Grand Line.</p>
                 </div>
@@ -156,27 +204,27 @@
             <h2>Arabasta Saga</h2>
             <div class="arcs">
                 <div id="reverse-mountain" class="arc" data-arc="reverse-mountain">
-                    <div class="arc-image"><img src="../images/reverse moutain arc.jfif" alt="Reverse Mountain"></div>
+                    <div class="arc-image"><img src="../images/reverse moutain arc.jfif" alt="Reverse Mountain" loading="lazy"></div>
                     <h3>Reverse Mountain Arc</h3>
                     <p>The crew enters the Grand Line by navigating the dangerous Reverse Mountain currents. They meet the whale Laboon and begin the most dangerous stretch of their journey.</p>
                 </div>
                 <div id="whiskey-peak" class="arc" data-arc="whiskey-peak">
-                    <div class="arc-image"><img src="../images/whiskey arc.jfif" alt="Whiskey Peak"></div>
+                    <div class="arc-image"><img src="../images/whiskey arc.jfif" alt="Whiskey Peak" loading="lazy"></div>
                     <h3>Whiskey Peak Arc</h3>
                     <p>The Straw Hats are welcomed by a town of hidden bounty hunters. Viví joins the crew after they uncover Baroque Works’ conspiracy.</p>
                 </div>
                 <div id="little-garden" class="arc" data-arc="little-garden">
-                    <div class="arc-image"><img src="../images/little garden.jfif" alt="Little Garden"></div>
+                    <div class="arc-image"><img src="../images/little garden.jfif" alt="Little Garden" loading="lazy"></div>
                     <h3>Little Garden Arc</h3>
                     <p>The crew lands on a prehistoric island where giants Dorry and Brogy fight. Luffy faces prehistoric dangers while learning that courage matters more than strength.</p>
                 </div>
                 <div id="drum-island" class="arc" data-arc="drum-island">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Drum Island"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Drum Island" loading="lazy"></div>
                     <h3>Drum Island Arc</h3>
                     <p>In a snowy kingdom ruled by the tyrant Wapol, the Straw Hats rescue Nami with the help of Chopper. Chopper joins the crew as their doctor.</p>
                 </div>
                 <div id="alabasta" class="arc" data-arc="alabasta">
-                    <div class="arc-image"><img src="../images/alabasta arc.jfif" alt="Alabasta"></div>
+                    <div class="arc-image"><img src="../images/alabasta arc.jfif" alt="Alabasta" loading="lazy"></div>
                     <h3>Alabasta Arc</h3>
                     <p>The crew battles Crocodile to stop a civil war in the desert kingdom. This arc reveals Vivi’s loyalty and proves the Straw Hats can challenge the World Government’s secret agents.</p>
                 </div>
@@ -187,17 +235,17 @@
             <h2>Skypiea Saga</h2>
             <div class="arcs">
                 <div id="jaya" class="arc" data-arc="jaya">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Jaya"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Jaya" loading="lazy"></div>
                     <h3>Jaya Arc</h3>
                     <p>The crew searches for the legendary sky island and meets the ruthless pirate Bellamy. This arc sets the tone for the next adventure and reveals the existence of the Golden Bell.</p>
                 </div>
                 <div id="skypiea-arc" class="arc" data-arc="skypiea">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Skypiea"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Skypiea" loading="lazy"></div>
                     <h3>Skypiea Arc</h3>
                     <p>The Straw Hats arrive at Skypiea, a floating island ruled by the god-like Enel. They battle priests, uncover ancient history, and ring the God’s Judgment Bell.</p>
                 </div>
                 <div class="arc" data-arc="ghibli">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Ghibli"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Ghibli" loading="lazy"></div>
                     <h3>Ghibli Arc</h3>
                     <p>A short adventure featuring the giant whale Laboon and the continued bond between the crew and their past promise. It provides emotional closure after the sky adventure.</p>
                 </div>
@@ -208,22 +256,22 @@
             <h2>Water 7 Saga</h2>
             <div class="arcs">
                 <div id="long-ring-long-land" class="arc" data-arc="long-ring-long-land">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Long Ring Long Land"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Long Ring Long Land" loading="lazy"></div>
                     <h3>Long Ring Long Land Arc</h3>
                     <p>The Straw Hats compete in the Davy Back Fight against Foxy’s crew. This arc tests their teamwork and loyalty with high stakes.</p>
                 </div>
                 <div id="water-7-arc" class="arc" data-arc="water-7">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Water 7"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Water 7" loading="lazy"></div>
                     <h3>Water 7 Arc</h3>
                     <p>On the city of shipwrights, the crew seeks a ship repair but instead uncovers the government assassin CP9. Robin’s past and the future of the crew’s dream are put to the test.</p>
                 </div>
                 <div id="enies-lobby" class="arc" data-arc="enies-lobby">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Enies Lobby"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Enies Lobby" loading="lazy"></div>
                     <h3>Enies Lobby Arc</h3>
                     <p>The Straw Hats declare war on the World Government to save Robin. They storm Enies Lobby, burn the government flag, and prove their bond is stronger than fear.</p>
                 </div>
                 <div class="arc" data-arc="post-enies-lobby">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Post Enies Lobby"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Post Enies Lobby" loading="lazy"></div>
                     <h3>Post-Enies Lobby Arc</h3>
                     <p>After the battle, the crew celebrates their victory, gains new bounties, and commissions the Thousand Sunny. Their unity is stronger than ever.</p>
                 </div>
@@ -234,12 +282,12 @@
             <h2>Thriller Bark Saga</h2>
             <div class="arcs">
                 <div id="thriller-bark-arc" class="arc" data-arc="thriller-bark">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Thriller Bark"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Thriller Bark" loading="lazy"></div>
                     <h3>Thriller Bark Arc</h3>
                     <p>On a haunted ship, the crew faces zombies, shadows, and the fearsome Gecko Moria. Brook joins the crew after a bizarre and eerie adventure.</p>
                 </div>
                 <div class="arc" data-arc="sabaody-archipelago">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Sabaody Archipelago"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Sabaody Archipelago" loading="lazy"></div>
                     <h3>Sabaody Archipelago Arc</h3>
                     <p>The crew encounters the Celestial Dragons and the terrifying power of Admiral Kizaru. A tragic separation pushes the Straw Hats to grow stronger apart.</p>
                 </div>
@@ -250,22 +298,22 @@
             <h2>Summit War Saga</h2>
             <div class="arcs">
                 <div class="arc" data-arc="amazon-lily">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Amazon Lily"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Amazon Lily" loading="lazy"></div>
                     <h3>Amazon Lily Arc</h3>
                     <p>Luffy is stranded on the island of the Kuja warriors and earns Boa Hancock’s respect. He trains his Haki and prepares to rescue Ace.</p>
                 </div>
                 <div class="arc" data-arc="impel-down">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Impel Down"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Impel Down" loading="lazy"></div>
                     <h3>Impel Down Arc</h3>
                     <p>Luffy breaks into the underwater prison to save Ace. Alliances shift as old enemies and allies join him in a desperate escape.</p>
                 </div>
                 <div class="arc" data-arc="marineford">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Marineford"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Marineford" loading="lazy"></div>
                     <h3>Marineford Arc</h3>
                     <p>Whitebeard’s epic war erupts at Marineford as pirates and Marines clash over Ace’s fate. The world changes forever in the aftermath.</p>
                 </div>
                 <div class="arc" data-arc="post-war">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Post War"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Post War" loading="lazy"></div>
                     <h3>Post-War Arc</h3>
                     <p>Luffy mourns Ace and decides the crew must train for two years. The Straw Hats separate to grow stronger for the New World.</p>
                 </div>
@@ -276,12 +324,12 @@
             <h2>Fishman Island Saga</h2>
             <div class="arcs">
                 <div class="arc" data-arc="return-to-sabaody">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Return to Sabaody"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Return to Sabaody" loading="lazy"></div>
                     <h3>Return to Sabaody Arc</h3>
                     <p>After two years, the Straw Hats reunite at Sabaody with new skills and new dreams. They set sail for Fishman Island and the next stage of the journey.</p>
                 </div>
                 <div class="arc" data-arc="fishman-island">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Fishman Island"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Fishman Island" loading="lazy"></div>
                     <h3>Fishman Island Arc</h3>
                     <p>On the underwater kingdom, Luffy confronts long-standing prejudice and defeats Hody Jones. The arc redefines the crew’s role as heroes of the sea.</p>
                 </div>
@@ -292,12 +340,12 @@
             <h2>Dressrosa Saga</h2>
             <div class="arcs">
                 <div class="arc" data-arc="punk-hazard">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Punk Hazard"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Punk Hazard" loading="lazy"></div>
                     <h3>Punk Hazard Arc</h3>
                     <p>The crew forms an alliance with Trafalgar Law while escaping a deadly gas island. Caesar Clown’s experiments threaten the world.</p>
                 </div>
                 <div class="arc" data-arc="dressrosa">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Dressrosa"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Dressrosa" loading="lazy"></div>
                     <h3>Dressrosa Arc</h3>
                     <p>The Straw Hats fight Doflamingo in a kingdom full of toys and secrets. The arc reveals the power of friendship and the rising threat of the Yonko.</p>
                 </div>
@@ -308,12 +356,12 @@
             <h2>Whole Cake Island Saga</h2>
             <div class="arcs">
                 <div class="arc" data-arc="zo">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Zou"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Zou" loading="lazy"></div>
                     <h3>Zou Arc</h3>
                     <p>The crew meets the Minks on the back of a giant elephant and learns of the Road Poneglyphs. The alliance is formed to challenge the Yonko Kaido.</p>
                 </div>
                 <div class="arc" data-arc="whole-cake-island">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Whole Cake Island"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Whole Cake Island" loading="lazy"></div>
                     <h3>Whole Cake Island Arc</h3>
                     <p>Luffy and friends launch a rescue mission to save Sanji from a politically arranged marriage. Big Mom’s territory creates the most dangerous challenge yet.</p>
                 </div>
@@ -324,7 +372,7 @@
             <h2>Wano Country Saga</h2>
             <div class="arcs">
                 <div class="arc" data-arc="wano">
-                    <div class="arc-image"><img src="../images/26035.jpg" alt="Wano Country"></div>
+                    <div class="arc-image"><img src="../images/26035.jpg" alt="Wano Country" loading="lazy"></div>
                     <h3>Wano Country Arc</h3>
                     <p>The Straw Hats join samurai rebels to overthrow Kaido and Orochi. Wano tests the crew with powerful enemies, ancient traditions, and world-shaking stakes.</p>
                 </div>
@@ -337,7 +385,7 @@
             
             <div class="characters-container">
                 <a href="characters.html#luffy" class="character-card">
-                    <div class="character-image"><img src="../images/luffy.jfif" alt="Monkey D. Luffy"></div>
+                    <div class="character-image"><img src="../images/luffy.jfif" alt="Monkey D. Luffy" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Monkey D. Luffy</h3>
                         <p class="role">Captain • Swordsman</p>
@@ -350,7 +398,7 @@
                 </a>
 
                 <a href="characters.html#zoro" class="character-card">
-                    <div class="character-image"><img src="../images/zoro.jfif" alt="Roronoa Zoro"></div>
+                    <div class="character-image"><img src="../images/zoro.jfif" alt="Roronoa Zoro" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Roronoa Zoro</h3>
                         <p class="role">Swordsman • Vice Captain</p>
@@ -363,7 +411,7 @@
                 </a>
 
                 <a href="characters.html#nami" class="character-card">
-                    <div class="character-image"><img src="../images/nami.jfif" alt="Nami"></div>
+                    <div class="character-image"><img src="../images/nami.jfif" alt="Nami" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Nami</h3>
                         <p class="role">Navigator • Cartographer</p>
@@ -376,7 +424,7 @@
                 </a>
 
                 <a href="characters.html#usopp" class="character-card">
-                    <div class="character-image"><img src="../images/usoop.jfif" alt="Usopp"></div>
+                    <div class="character-image"><img src="../images/usoop.jfif" alt="Usopp" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Usopp</h3>
                         <p class="role">Sniper • Storyteller</p>
@@ -389,7 +437,7 @@
                 </a>
 
                 <a href="characters.html#sanji" class="character-card">
-                    <div class="character-image"><img src="../images/sanji.jfif" alt="Sanji"></div>
+                    <div class="character-image"><img src="../images/sanji.jfif" alt="Sanji" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Sanji</h3>
                         <p class="role">Cook • Fighter</p>
@@ -402,7 +450,7 @@
                 </a>
 
                 <a href="characters.html#chopper" class="character-card">
-                    <div class="character-image"><img src="../images/chopper.jfif" alt="Tony Tony Chopper"></div>
+                    <div class="character-image"><img src="../images/chopper.jfif" alt="Tony Tony Chopper" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Tony Tony Chopper</h3>
                         <p class="role">Doctor • Reindeer</p>
@@ -415,7 +463,7 @@
                 </a>
 
                 <a href="characters.html#robin" class="character-card">
-                    <div class="character-image"><img src="../images/robin.jfif" alt="Nico Robin"></div>
+                    <div class="character-image"><img src="../images/robin.jfif" alt="Nico Robin" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Nico Robin</h3>
                         <p class="role">Archaeologist • Scholar</p>
@@ -428,7 +476,7 @@
                 </a>
 
                 <a href="characters.html#franky" class="character-card">
-                    <div class="character-image"><img src="../images/franky.jfif" alt="Franky"></div>
+                    <div class="character-image"><img src="../images/franky.jfif" alt="Franky" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Franky</h3>
                         <p class="role">Shipwright • Cyborg</p>
@@ -441,7 +489,7 @@
                 </a>
 
                 <a href="characters.html#brook" class="character-card">
-                    <div class="character-image"><img src="../images/brook.jpg" alt="Brook"></div>
+                    <div class="character-image"><img src="../images/brook.jpg" alt="Brook" loading="lazy"></div>
                     <div class="character-info">
                         <h3>Brook</h3>
                         <p class="role">Musician • Swordsman</p>
@@ -475,7 +523,10 @@
             <p>🏴‍☠️ Classic manga and anime content collection | Built for One Piece enthusiasts</p>
             <p style="margin-top: 10px; opacity: 0.6;">© 2026 One Piece Explorer | Crafted with passion for the pirate adventure 🗺️</p>
         </div>
-    </footer>
+        <div class="footer-actions">
+        <a href="#top" class="back-to-top">Back to top</a>
+    </div>
+</footer>
 
     <script src="../js/script.js"></script>
 </body>
