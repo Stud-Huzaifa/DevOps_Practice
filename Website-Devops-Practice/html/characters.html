@@ -3,19 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Straw Hat Crew - One Piece</title>
+    <meta name="description" content="Explore One Piece content for Straw Hat Crew - One Piece, including arcs, crew members, and Devil Fruit lore.">
+    <meta property="og:title" content="Straw Hat Crew - One Piece">
+    <meta property="og:description" content="Explore One Piece content for Straw Hat Crew - One Piece, including arcs, crew members, and Devil Fruit lore.">
+    <meta property="og:image" content="../images/26035.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-github-pages-url/">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../images/26035.jpg" type="image/jpeg">
 </head>
-<body>
+<body id="top">
     <header>
         <h1>Straw Hat Crew</h1>
         <p>Meet the legendary pirates sailing the Grand Line in pursuit of their dreams.</p>
+        <div class="crew-stats">
+            <span class="crew-stat-item">⚔️ 9 Members</span>
+            <span class="crew-stat-item">💰 Total Bounty: 3,931,000,100</span>
+            <span class="crew-stat-item">🗺️ Crew Founded: East Blue</span>
+        </div>
     </header>
 
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="index.html" class="sidebar-logo">ONE PIECE</a>
+            <div class="sidebar-actions">
+                <button class="theme-switcher" aria-label="Toggle theme">🌙</button>
+                <button class="sidebar-toggle" aria-expanded="true" aria-label="Toggle navigation">☰</button>
+            </div>
             <p class="sidebar-subtitle">The Grand Adventure</p>
         </div>
 
@@ -109,12 +128,30 @@
     </aside>
 
     <main class="main-content">
-        <!-- Luffy -->
-        <section id="luffy" class="character-detail">
+        <section class="crew-filter-panel">
+            <div class="filter-header">
+                <h2>Filter the Crew</h2>
+                <input type="text" id="crew-search" placeholder="Search by name or role..." class="crew-search-input" aria-label="Search crew members">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-role="all">All Members</button>
+                <button class="filter-btn" data-role="captain">Captain</button>
+                <button class="filter-btn" data-role="swordsman">Swordsman</button>
+                <button class="filter-btn" data-role="navigator">Navigator</button>
+                <button class="filter-btn" data-role="sniper">Sniper</button>
+                <button class="filter-btn" data-role="cook">Cook</button>
+                <button class="filter-btn" data-role="doctor">Doctor</button>
+                <button class="filter-btn" data-role="archaeologist">Archaeologist</button>
+                <button class="filter-btn" data-role="shipwright">Shipwright</button>
+                <button class="filter-btn" data-role="musician">Musician</button>
+            </div>
+        </section>
+
+        <section class="characters-grid">
             <a href="luffy.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/luffy.jfif" alt="Monkey D. Luffy">
+                        <img src="../images/luffy.jfif" alt="Monkey D. Luffy" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Monkey D. Luffy</h2>
@@ -159,7 +196,7 @@
             <a href="zoro.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/zoro.jfif" alt="Roronoa Zoro">
+                        <img src="../images/zoro.jfif" alt="Roronoa Zoro" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Roronoa Zoro</h2>
@@ -204,7 +241,7 @@
             <a href="nami.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/nami.jfif" alt="Nami">
+                        <img src="../images/nami.jfif" alt="Nami" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Nami</h2>
@@ -249,7 +286,7 @@
             <a href="usopp.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/usoop.jfif" alt="Usopp">
+                        <img src="../images/usoop.jfif" alt="Usopp" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Usopp</h2>
@@ -294,7 +331,7 @@
             <a href="sanji.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/sanji.jfif" alt="Sanji">
+                        <img src="../images/sanji.jfif" alt="Sanji" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Sanji</h2>
@@ -339,7 +376,7 @@
             <a href="chopper.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/chopper.jfif" alt="Tony Tony Chopper">
+                        <img src="../images/chopper.jfif" alt="Tony Tony Chopper" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Tony Tony Chopper</h2>
@@ -384,7 +421,7 @@
             <a href="robin.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/robin.jfif" alt="Nico Robin">
+                        <img src="../images/robin.jfif" alt="Nico Robin" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Nico Robin</h2>
@@ -429,7 +466,7 @@
             <a href="franky.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/franky.jfif" alt="Franky">
+                        <img src="../images/franky.jfif" alt="Franky" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Franky</h2>
@@ -474,7 +511,7 @@
             <a href="brook.html" class="character-link">
                 <div class="character-detail-container">
                     <div class="character-detail-image">
-                        <img src="../images/brook.jpg" alt="Brook">
+                        <img src="../images/brook.jpg" alt="Brook" loading="lazy">
                     </div>
                     <div class="character-detail-content">
                         <h2>Brook</h2>
@@ -517,7 +554,10 @@
 
     <footer>
         <p><a href="index.html">Back to Home</a></p>
-    </footer>
+        <div class="footer-actions">
+        <a href="#top" class="back-to-top">Back to top</a>
+    </div>
+</footer>
 
     <script src="../js/script.js"></script>
 </body>

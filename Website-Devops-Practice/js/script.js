@@ -56,6 +56,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Crew search and filter
+    const crewSearch = document.getElementById('crew-search');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const crewCards = document.querySelectorAll('.crew-card');
+
+    let activeRole = 'all';
+
+    const filterCrew = () => {
+        const query = crewSearch ? crewSearch.value.trim().toLowerCase() : '';
+        crewCards.forEach(card => {
+            const role = card.getAttribute('data-role');
+            const name = card.getAttribute('data-name') || '';
+            const roleMatch = activeRole === 'all' || role === activeRole;
+            const nameMatch = name.includes(query) || query === '';
+            card.style.display = roleMatch && nameMatch ? '' : 'none';
+        });
+    };
+
+    if (crewSearch) {
+        crewSearch.addEventListener('input', filterCrew);
+    }
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            activeRole = this.getAttribute('data-role');
+            filterCrew();
+        });
+    });
+
     // Smooth scrolling for internal anchor links only
     navLinks.forEach(link => {
         const href = link.getAttribute('href');

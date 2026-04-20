@@ -1319,3 +1319,332 @@ nav a.active {
 .slide-in {
     animation: slideInLeft 0.6s ease;
 }
+
+/* Crew Stats Header */
+.crew-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.crew-stat-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: rgba(255, 215, 0, 0.10);
+    border: 1px solid rgba(255, 215, 0, 0.22);
+    color: #FFE5A6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.6px;
+}
+
+/* Crew Filter Panel */
+.crew-filter-panel {
+    margin: 36px 0;
+    padding: 28px 30px;
+    background: rgba(10, 10, 10, 0.8);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 215, 0, 0.18);
+    backdrop-filter: blur(10px);
+}
+
+.filter-header {
+    margin-bottom: 24px;
+}
+
+.filter-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: #FFD944;
+    margin: 0 0 16px 0;
+    letter-spacing: 1px;
+}
+
+.crew-search-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 14px 18px;
+    border: 2px solid rgba(255, 215, 0, 0.25);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all var(--transition-normal);
+}
+
+.crew-search-input:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 14px rgba(255, 215, 0, 0.22);
+}
+
+.crew-search-input::placeholder {
+    color: #888;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.filter-btn {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 215, 0, 0.22);
+    background: rgba(255, 255, 255, 0.06);
+    color: #E9D78A;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 215, 0, 0.12);
+    border-color: #FFD700;
+    color: #FFE5A6;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: rgba(255, 215, 0, 0.18);
+    border-color: #FFD700;
+    color: #FFD944;
+}
+
+/* Character Grid */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 26px;
+    margin: 40px 0 60px 0;
+}
+
+.crew-card {
+    position: relative;
+    transition: all var(--transition-smooth);
+}
+
+.crew-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.92), rgba(10, 10, 10, 0.88));
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    transition: all var(--transition-smooth);
+    position: relative;
+}
+
+.crew-card-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 215, 0, 0.08), transparent);
+    pointer-events: none;
+}
+
+.crew-card-link:hover {
+    transform: translateY(-10px);
+    border-color: #FFD700;
+    box-shadow: 0 20px 50px rgba(255, 215, 0, 0.25);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(15, 15, 15, 0.92));
+}
+
+.crew-card-image {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.12);
+}
+
+.crew-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.9) contrast(1.1) saturate(1.05);
+    transition: filter var(--transition-normal), transform var(--transition-normal);
+    display: block;
+}
+
+.crew-card-link:hover .crew-card-image img {
+    filter: brightness(1) contrast(1.15) saturate(1.15);
+    transform: scale(1.08);
+}
+
+.crew-card-content {
+    padding: 22px 18px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.crew-role-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 215, 0, 0.14);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    color: #FFE5A6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 10px;
+    align-self: fit-content;
+}
+
+.crew-card-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #FFD944;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.8px;
+}
+
+.crew-bounty {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: #FFE37A;
+    font-weight: 600;
+    margin: 0 0 auto 0;
+}
+
+.crew-cta {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: rgba(255, 215, 0, 0.08);
+    color: #FFE5A6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.crew-card-link:hover .crew-cta {
+    background: rgba(255, 215, 0, 0.15);
+    color: #FFFFFF;
+}
+
+/* Character Detail Pages */
+.character-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.08), transparent);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.character-sidebar-info {
+    position: sticky;
+    top: 100px;
+    padding: 24px;
+    background: rgba(10, 10, 10, 0.85);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    margin-bottom: 24px;
+}
+
+.character-sidebar-info h3 {
+    font-family: 'Cinzel', serif;
+    color: #FFD944;
+    margin: 0 0 16px 0;
+    font-size: 1.2rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #FFE37A;
+    font-weight: 600;
+}
+
+.info-value {
+    color: #E9D78A;
+}
+
+.related-characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.related-char-link {
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    color: #FFE5A6;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.related-char-link:hover {
+    background: rgba(255, 215, 0, 0.15);
+    border-color: #FFD700;
+    color: #FFD944;
+}
+
+.ability-timeline {
+    margin: 24px 0;
+}
+
+.timeline-item {
+    padding: 18px;
+    margin: 12px 0;
+    border-left: 4px solid #FFD700;
+    background: rgba(255, 215, 0, 0.06);
+    border-radius: 0 6px 6px 0;
+}
+
+.timeline-item h4 {
+    margin: 0 0 8px 0;
+    color: #FFE37A;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: #E9D78A;
+    font-size: 0.9rem;
+}
