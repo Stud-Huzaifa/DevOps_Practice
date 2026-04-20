@@ -836,7 +836,7 @@ footer a:hover {
 }
 
 .nav-item {
-    display: none;
+    display: block;
     padding: 6px 15px 6px 30px;
     color: #E0E0E0;
     text-decoration: none;
@@ -844,10 +844,6 @@ footer a:hover {
     font-size: 0.85em;
     transition: all 0.3s ease;
     border-left: 2px solid transparent;
-}
-
-.nav-section:hover .nav-item {
-    display: block;
 }
 
 .nav-item:hover {
@@ -864,7 +860,7 @@ footer a:hover {
 }
 
 .nav-subitem {
-    display: none;
+    display: block;
     padding: 4px 15px 4px 45px;
     color: #B8B8B8;
     text-decoration: none;
@@ -872,10 +868,6 @@ footer a:hover {
     font-size: 0.8em;
     transition: all 0.3s ease;
     border-left: 1px solid transparent;
-}
-
-.nav-section:hover .nav-subitem {
-    display: block;
 }
 
 .nav-subitem:hover {
