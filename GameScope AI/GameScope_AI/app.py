@@ -13,6 +13,18 @@ SRC_DIR = ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 from gamescope_ai.predictor import GameScopePredictor
+from gamescope_ai.train import main as train_models
+
+
+def ensure_artifacts() -> None:
+    required = [
+        ROOT / "artifacts" / "success_classifier.joblib",
+        ROOT / "artifacts" / "profit_regressor.joblib",
+        ROOT / "artifacts" / "metadata.json",
+    ]
+    if all(path.exists() for path in required):
+        return
+    train_models()
 
 st.set_page_config(page_title="GameScope AI", page_icon="🎮", layout="wide")
 st.markdown(
@@ -283,9 +295,11 @@ if "last_run" not in st.session_state:
 
 if st.session_state.predictor is None:
     try:
+        with st.spinner("Preparing model artifacts (first run only)..."):
+            ensure_artifacts()
         st.session_state.predictor = GameScopePredictor()
     except FileNotFoundError:
-        st.error("Model artifacts not found. Run `python train_model.py` first.")
+        st.error("Model artifacts are unavailable. Run `python train_model.py` and retry.")
         st.stop()
 
 predictor = st.session_state.predictor
