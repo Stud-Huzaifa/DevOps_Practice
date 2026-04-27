@@ -8,7 +8,14 @@ import time
 import streamlit as st
 
 
-ROOT = Path(__file__).resolve().parent
+def resolve_project_root(start_dir: Path) -> Path:
+    for candidate in [start_dir, *start_dir.parents]:
+        if (candidate / "src" / "gamescope_ai").exists():
+            return candidate
+    return start_dir
+
+
+ROOT = resolve_project_root(Path(__file__).resolve().parent)
 SRC_DIR = ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
