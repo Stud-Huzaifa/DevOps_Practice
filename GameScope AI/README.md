@@ -25,7 +25,7 @@ GameScope AI is a web-based machine learning system that predicts game success l
 - `src/gamescope_ai/train.py`: model training, model selection, and evaluation pipeline
 - `src/gamescope_ai/predictor.py`: inference + recommendations engine
 - `train_model.py`: entrypoint for training
-- `app.py`: Streamlit web app
+- `GameScope_AI/app.py`: Streamlit web app
 - `artifacts/`: generated models and metadata (local; not committed)
 
 ## Quickstart
@@ -33,10 +33,27 @@ GameScope AI is a web-based machine learning system that predicts game success l
 ```bash
 python -m pip install -r requirements.txt
 python train_model.py
-streamlit run app.py
+streamlit run GameScope_AI/app.py
 ```
 
 Open: `http://localhost:8501`
+
+## Deploy on Render (recommended)
+
+This repository includes a production Docker setup (`Dockerfile`) for stable deployment.
+
+1. Push latest code to GitHub.
+2. In Render, create a new **Web Service** from your GitHub repo.
+3. Configure:
+   - Environment: `Docker`
+   - Root directory: `GameScope AI`
+   - Plan: `Free` (or higher)
+4. Deploy. Render will run:
+   - `streamlit run GameScope_AI/app.py --server.address=0.0.0.0 --server.port=$PORT`
+
+Notes:
+- Model artifacts are auto-generated on first run if missing.
+- First boot may take longer due to package install + model training.
 
 ## Modeling approach
 

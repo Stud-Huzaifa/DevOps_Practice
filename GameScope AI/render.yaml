@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: gamescope-ai
+    env: docker
+    plan: free
+    rootDir: GameScope AI
+    autoDeploy: true
