@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import subprocess
 import sys
 import time
 
@@ -19,8 +20,28 @@ ROOT = resolve_project_root(Path(__file__).resolve().parent)
 SRC_DIR = ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
-from gamescope_ai.predictor import GameScopePredictor
-from gamescope_ai.train import main as train_models
+
+
+def ensure_runtime_dependencies() -> None:
+    requirements_path = Path(__file__).resolve().parent / "requirements.txt"
+    try:
+        import joblib  # noqa: F401
+    except ModuleNotFoundError:
+        subprocess.run(
+            [sys.executable, "-m", "pip", "install", "-r", str(requirements_path)],
+            check=True,
+        )
+
+
+def load_runtime_modules():
+    ensure_runtime_dependencies()
+    from gamescope_ai.predictor import GameScopePredictor
+    from gamescope_ai.train import main as train_models
+
+    return GameScopePredictor, train_models
+
+
+GameScopePredictor, train_models = load_runtime_modules()
 
 
 def ensure_artifacts() -> None:
